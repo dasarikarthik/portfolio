@@ -76,7 +76,21 @@ module.exports = {
                 {
                     filename: 'assets/fonts/[hash][ext]'
                 }
-            }
+            },
+
+             // pdf
+             {
+                test: /\.pdf$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: 'pdfs/'
+                    }
+                  }
+                ]
+              }
         ]
     }
 }
